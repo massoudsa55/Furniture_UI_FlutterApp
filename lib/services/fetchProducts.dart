@@ -1,5 +1,6 @@
-import 'dart:convert';
+// ignore_for_file: file_names
 
+import 'dart:convert';
 import 'package:furniture_ui_app/models/product.dart';
 import 'package:http/http.dart' as http;
 
