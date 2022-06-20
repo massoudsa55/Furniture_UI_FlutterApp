@@ -9,7 +9,7 @@ Future<List<Category>> fetchCategories() async {
   const String apiUrl =
       "https://5f210aa9daa42f001666535e.mockapi.io/api/categories";
 
-  final response = await http.get(apiUrl as Uri);
+  final response = await http.get(Uri.parse(apiUrl));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,

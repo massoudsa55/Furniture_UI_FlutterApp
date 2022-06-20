@@ -1,35 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:furniture_ui_app/constants.dart';
+import 'package:furniture_ui_app/screens/home/components/body.dart';
+import 'package:furniture_ui_app/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(),
+      body: const Body(),
     );
   }
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Colors.white,
-      //elevation: 0,
       leading: IconButton(
         onPressed: () {},
-        icon: const Icon(Icons.home),
-        color: Colors.black,
+        icon: SvgPicture.asset(
+          "assets/icons/menu.svg",
+          height: SizeConfig.defaultSize * 2,
+        ),
+        //color: Colors.black,
       ),
       actions: [
         IconButton(
           onPressed: () {},
-          icon: SvgPicture.asset("assets/icons/search.svg"),
+          icon: SvgPicture.asset(
+            "assets/icons/scan.svg",
+            height: SizeConfig.defaultSize * 2.4,
+          ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset("assets/icons/bag.svg"),
+        const Center(
+          child: Text(
+            "Scan",
+            style: TextStyle(
+              color: fTextColor,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-        const SizedBox(width: 10),
+        SizedBox(width: SizeConfig.defaultSize),
       ],
     );
   }
