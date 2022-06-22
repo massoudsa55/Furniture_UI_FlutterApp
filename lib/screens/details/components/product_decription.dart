@@ -49,13 +49,13 @@ class ProductDescription extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: TextButton(
+                  onPressed: press(),
                   style: TextButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50)),
                     padding: EdgeInsets.all(defaultSize * 1.5),
                     backgroundColor: fPrimaryColor,
-                  ),
-                  onPressed: press(),
+                  ),                  
                   child: Text(
                     "Add to cart",
                     style: TextStyle(
