@@ -18,29 +18,28 @@ class RecommandProducts extends StatelessWidget {
     double defaultSize = SizeConfig.defaultSize;
     return Padding(
       padding: EdgeInsets.all(defaultSize * 2),
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: products.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount:
-              SizeConfig.orientation == Orientation.portrait ? 2 : 4,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-          childAspectRatio: 0.639,
-        ),
-        itemBuilder: (context, index) => GestureDetector(
-          child: ProductCard(product: products[index]),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailsScreen(
-                  product: products[index],
+      child: OrientationBuilder(
+        builder: (context, orientation) => GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: products.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: orientation == Orientation.portrait ? 2 : 4,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
+            childAspectRatio: 0.639,
+          ),
+          itemBuilder: (context, index) => GestureDetector(
+            child: ProductCard(product: products[index]),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(product: products[index]),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );

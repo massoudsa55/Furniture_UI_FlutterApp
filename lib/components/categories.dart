@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_ui_app/models/categories.dart';
+import 'package:furniture_ui_app/models/product.dart';
+import 'package:furniture_ui_app/screens/details/details_screen.dart';
 import 'package:furniture_ui_app/screens/home/components/category_card.dart';
 
 class Categories extends StatelessWidget {
@@ -17,7 +19,10 @@ class Categories extends StatelessWidget {
       child: Row(
           children: List.generate(
         categories.length,
-        (index) => CategoryCard(category: categories[index]),
+        (index) => GestureDetector(
+          child: CategoryCard(category: categories[index]),
+          onTap: () {},
+        ),
       )),
     );
   }
