@@ -1,4 +1,6 @@
-# furniture_ui_app
+# Modern Furniture UI App
+
+A Furniture UI App developed using Flutter, modern UI and using API for data for representation.
 
 Global presentation
 ***
