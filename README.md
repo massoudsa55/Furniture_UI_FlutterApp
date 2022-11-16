@@ -28,16 +28,7 @@ Screenshots
 </p>
 
 ***
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
+...
 
 ## For Getting Started with flutter 
 
